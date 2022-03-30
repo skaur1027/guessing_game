@@ -1,9 +1,4 @@
-#import random number
-
 import random
-from tokenize import cookie_re
-
-from numpy import append, number
 
 # Greeting the player
 
@@ -29,18 +24,16 @@ if computer == 'Y':
     while user_response != 'you won':
         if user_response == 'too high':
             upper_bound = ran_number
-            ran_number = random.randint(lower_bound, upper_bound+1)
+            ran_number = random.randint(lower_bound, upper_bound + 1)
             print("Computer's guess: {}".format(ran_number))
             user_response = input('How close was the computer to your number: ')
         elif user_response == 'too low':
             lower_bound = ran_number
-            ran_number = random.randint(lower_bound, upper_bound+1)
+            ran_number = random.randint(lower_bound, upper_bound + 1)
             print("Computer's guess: {}".format(ran_number))
-            user_response = input('How close was the computer to your number: ')            
+            user_response = input('How close was the computer to your number: ')
 
-        
-
-# Ask the user to set the range bounds
+        # Ask the user to set the range bounds
 start = int(input('Pick a starting number: '))
 stop = int(input('Please pick an ending number: '))
 # Prompt the player to guess a number
@@ -59,9 +52,9 @@ while restart_game == 'Y':
         except ValueError:
             print('Oops! This is not a valid number. Please pick a valid number.')
 
-    turn = 1 
+    turn = 1
     while number_guess != game_number:
-        
+
         if number_guess < 0 or number_guess > 100:
             print('Bad guess!')
             print('Turn number: {}'.format(turn))
@@ -85,8 +78,7 @@ while restart_game == 'Y':
             except ValueError:
                 print('Oops! This is not a valid number. Please pick a valid number.')
 
-
-        turn = turn + 1 
+        turn = turn + 1
 
     if number_guess == game_number:
         print('You won!')
@@ -97,6 +89,3 @@ while restart_game == 'Y':
         lowest = min(correct_guesses)
         if restart_game == 'N':
             print('Congrats, your lowest number of guesses was: {}'.format(lowest))
-
-
-
